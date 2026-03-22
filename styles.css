@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --white: hsl(0, 100%, 100%);
+  --purple-100: hsl(275, 100%, 97%);
+  --purple-600: hsl(292, 16%, 49%);
+  --purple-950: hsl(292, 42%, 14%);
+
+  --fs-body: clamp(0.875rem, calc(1.5vw + 0.5rem), 1rem);
+  --ff-base: 'Work Sans', sans-serif;
+}
+
+html{
+  font-size:var(--fs-body);
+  font-family: var(--ff-base);
+  background-color: var(--purple-100);
+  
+}
+body{
+  margin: 0;
+  background-image: url(/assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% auto;
+  padding-inline: 2rem;
+  padding-top: 10rem;
+}
+main{
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+h1,summary{
+  color: var(--purple-950);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  list-style:none;
+}
+summary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+h1{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+summary::after { content: url(/assets/images/icon-plus.svg); }
+details[open] summary::after { content: url(/assets/images/icon-minus.svg); }
+
+p{
+  color: var(--purple-600);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+h1::before{
+  content: url(/assets/images/icon-star.svg);
+}
+
+@media (min-width: 600px) {
+  body{
+    background-image: url(/assets/images/background-pattern-desktop.svg);
+    
+    padding-top: 10%;
+  }
+  main{
+    max-width: 70%;
+  }
+}
